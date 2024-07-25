@@ -5,7 +5,8 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "config": "sh ./jwtRS256.sh ; mv jwtRS256.key src/assets/jwtRS256.key && mv jwtRS256.key.pub src/assets/jwtRS256.key.pub"
   },
   "private": true,
   "dependencies": {

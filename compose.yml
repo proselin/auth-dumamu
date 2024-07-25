@@ -1,16 +1,4 @@
 services:
-  finance-db:
-    image: postgres
-    container_name: postgres_finance_db
-    ports:
-      - '5432:5432'
-    environment:
-      POSTGRES_DB: finance_db
-      POSTGRES_USER: finance_user
-      POSTGRES_PASSWORD: finance_pass
-    volumes:
-      - finance_db_data:/var/lib/postgresql/data
-
   authentication-db:
     image: postgres
     container_name: pg_auth_db
@@ -24,8 +12,6 @@ services:
       - auth_db_data:/var/lib/postgresql/data
 
 volumes:
-  finance_db_data:
-    driver: local
   auth_db_data:
     driver: local
 
