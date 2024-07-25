@@ -42,5 +42,5 @@ Thumbs.db
 .nx/workspace-data
 
 #Keygen
-jwtRS256.key
-jwtRS256.key.pub
+src/assets/jwtRS256.key
+src/assets/jwtRS256.key.pub
