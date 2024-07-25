@@ -40,3 +40,7 @@ Thumbs.db
 
 .nx/cache
 .nx/workspace-data
+
+#Keygen
+jwtRS256.key
+jwtRS256.key.pub

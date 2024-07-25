@@ -16,7 +16,20 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {},
+    "paths": {
+      "@common/*": [
+        "src/app/common/*"
+      ],
+      "@auth/*": [
+        "src/app/auth/*"
+      ],
+      "@entities/*": [
+        "src/app/entities/*"
+      ],
+      "@user/*": [
+        "src/app/user/*"
+      ]
+    },
     "esModuleInterop": true
   },
   "files": [],
