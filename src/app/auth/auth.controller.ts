@@ -1,28 +1,21 @@
-import {
-  Body,
-  Controller,
-  HttpCode,
-  HttpStatus,
-  Post,
-  Request,
-} from '@nestjs/common';
+import { Body, Controller, HttpCode, HttpStatus, Post, Request } from '@nestjs/common';
 import { AuthService } from './auth.service';
-import { SignInDto } from './dto/sign-in.dto';
+import { SignInDto, TokenResponseDto } from '@auth/dto';
 import { ApiBearerAuth, ApiBody } from '@nestjs/swagger';
-import { CreateUserDTO } from '../user/dto/create-user.dto';
-import { TokenResponseDto } from './dto/token-request.dto';
+import { CreateUserDTO } from '@user/dto';
 
 @Controller({
-  path: 'auth',
+  path: 'auth'
 })
 export class AuthController {
-  constructor(private readonly authService: AuthService) {}
+  constructor(private readonly authService: AuthService) {
+  }
 
   @HttpCode(HttpStatus.OK)
   @Post('sign-in')
   @ApiBearerAuth()
   @ApiBody({
-    type: () => SignInDto,
+    type: () => SignInDto
   })
   signIn(@Body() dto: SignInDto) {
     return this.authService.signIn(dto);

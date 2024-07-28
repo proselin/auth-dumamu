@@ -5,12 +5,11 @@ import { TokenEntity, UserEntity } from '../../entities/';
 import { EnvironmentName, NodeEnvironment } from '@common/constant';
 
 export async function useAuthDbFactory(
-  ...args: any[]
+  configService: ConfigService
 ): Promise<TypeOrmModuleOptions> {
   const logger = new Logger('AuthDBFactory');
   logger.log('Start connect to database');
 
-  const configService = args[0] as ConfigService;
   const isDevelopment = process.env.NODE_ENV == NodeEnvironment.development;
 
   const config: TypeOrmModuleOptions = {
@@ -36,7 +35,7 @@ export async function useAuthDbFactory(
       retryAttempts: 3,
       ssl: false,
       cache: false,
-      logging: 'all'
+      logging: ['info', 'warn', 'error']
     } as TypeOrmModuleOptions;
   }
   return config;

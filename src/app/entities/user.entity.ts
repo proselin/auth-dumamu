@@ -11,7 +11,7 @@ export class UserEntity extends AbstractEntity {
   username: string;
 
   @Column({
-    unique: true,
+    unique: true
   })
   salt: string;
 
@@ -19,15 +19,15 @@ export class UserEntity extends AbstractEntity {
   password: string;
 
   @Column({
-    nullable: true,
+    nullable: true
   })
   email: string;
 
   @Column({
-    nullable: true,
+    nullable: true
   })
   googleId: string;
 
-  @OneToMany(() => TokenEntity, (tokenEntity) => tokenEntity.userId)
+  @OneToMany(() => TokenEntity, (tokenEntity) => tokenEntity.user)
   tokens: TokenEntity[];
 }

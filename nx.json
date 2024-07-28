@@ -1,7 +1,10 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "namedInputs": {
-    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "default": [
+      "{projectRoot}/**/*",
+      "sharedGlobals"
+    ],
     "production": [
       "default",
       "!{projectRoot}/.eslintrc.json",
@@ -12,7 +15,9 @@
       "!{projectRoot}/src/test-setup.[jt]s",
       "!{projectRoot}/test-setup.[jt]s"
     ],
-    "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
+    "sharedGlobals": [
+      "{workspaceRoot}/.github/workflows/ci.yml"
+    ]
   },
   "plugins": [
     {
@@ -34,8 +39,9 @@
       "options": {
         "targetName": "test"
       },
-      "exclude": ["e2e/**/*"]
+      "exclude": [
+        "e2e/**/*"
+      ]
     }
-  ],
-  "nxCloudAccessToken": "ZTU3NzU5YzYtMGMyNS00Y2NhLWE1M2ItOTY0OWZhZmM3MDY0fHJlYWQtd3JpdGU="
+  ]
 }

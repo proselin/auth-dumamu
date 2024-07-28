@@ -44,5 +44,5 @@ export class TokenEntity extends AbstractEntity {
   isRevoke: boolean;
 
   @ManyToOne(() => UserEntity, (userEntity) => userEntity.tokens)
-  userId: string;
+  user: string;
 }
